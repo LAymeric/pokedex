@@ -1,30 +1,25 @@
 <template >
   <div>
-    <h3 v-on:click="getPokemonDetails">{{this.pokemon.name }}</h3>
-    <PokemonDetails v-if="pokemonDetails" :pokemonDetails="pokemonDetails" />
+    <div class='row'>
+      <div class='col-5'>
+        <h2><b>{{this.pokemon.name }}</b> -  <span class="badge badge-secondary">#{{this.pokemon.id}}</span></h2>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-5'>
+        <img v-bind:src="this.pokemon.sprites.front_default" width=150 height=150/>
+      </div>
+      <div class='col-6'>
+        <h4><b>Type: </b></h4><br>
+          <p v-for="type in this.pokemon.types" v-bind:type="type.name" v-bind:key="type.name">{{type.type.name}}</p>
+      </div>
+    </div>
   </div>
 </template>
 <script>
-import axios from 'axios'
-import PokemonDetails from './PokemonDetails'
-
 export default {
   name: 'Pokemon',
   props: ['pokemon'],
-  components: { PokemonDetails },
-  methods: {
-    getPokemonDetails: function (event) {
-      if (this.pokemonDetails === null) {
-        // pas de données, on en récupère (ouvre le détail)
-        axios.get(this.pokemon.url).then(response => {
-          console.log(response)
-          this.pokemonDetails = response.data
-        })
-      } else {
-        this.pokemonDetails = null // pour "fermer" le detail
-      }
-    }
-  },
   data () {
     return {
       pokemonDetails: null
@@ -32,3 +27,10 @@ export default {
   }
 }
 </script>
+<style>
+ /* .name{
+    padding-left: 30px;
+    font-weight: bold;
+
+  }*/
+</style>
