@@ -40,19 +40,15 @@ export default {
   },
   methods: {
     getPokemon: function (event) {
-      console.log(searchPokemon.value)
       if (searchPokemon.value && searchPokemon.value !== "") {
         this.msgError = null
         axios.get("https://pokeapi.co/api/v2/pokemon/" + searchPokemon.value.toLowerCase()).then(response => {
-        console.log(response)
         this.isCatched(response)
         this.pokemonDetails = response.data
-      }).catch((e)=>{
-          console.log(e)       
+      }).catch((e)=>{    
           this.backgroundcolor = '#E80000',
           this.msgError = 'Your pokemon is undefined'
           this.pokemonDetails = null
-        
         }) 
       } 
     },
