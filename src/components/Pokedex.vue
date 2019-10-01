@@ -53,8 +53,7 @@ export default {
           this.msgError = 'Your pokemon is undefined'
           this.pokemonDetails = null
         
-      }
-        ) 
+        }) 
       } 
     },
     isCatched: function(response) {
@@ -65,51 +64,3 @@ export default {
   }
 }
 </script>
-<style>
-@font-face {
-   font-family: Pokemon;
-   src: url(../assets/font/Pokemon.ttf);
-}
-  .pokedex{
-    padding-top: 100px;
-    background-color: brown;
-    border-radius: 10px;
-    border-bottom:10px solid black;
-    color: rgb(235, 235, 37);
-    text-shadow: blue 1px 1px, blue -1px 1px, blue -1px -1px, blue 1px -1px;
-    height:280px;
-    font-family: Pokemon;
-  }
-  .container-pokedex{
-    border-radius: 20px;
-    border: 5px solid black;
-    width: 800px;
-    margin: auto;
-  }
-  #circle{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    position:relative;
-    top:-80px;
-    background-color:white;
-    border:10px solid black;
-    margin: auto;
-    }
-  #circle-2{
-    width:75px;
-    height:75px;
-    border-radius:50%;
-    position:relative;
-    top: 28px;
-    border:5px solid black;
-    margin: auto;
-  }
-  #searchPokemon{
-    margin-bottom: 30px; 
-  }
-  .error{
-    color: red;
-    font-size: 150%;
-  }
-</style>

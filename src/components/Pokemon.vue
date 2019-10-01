@@ -1,4 +1,4 @@
-<template >
+<template>
   <div>
     <div class='row'>
       <div class='col-5'>
@@ -18,8 +18,8 @@
 </template>
 <script>
 export default {
-  name: 'Pokemon',
-  props: ['pokemon'],
+  name: "Pokemon",
+  props: ["pokemon"],
   data () {
     return {
       pokemonDetails: null
